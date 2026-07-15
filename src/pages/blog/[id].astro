@@ -13,10 +13,10 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<html lang="nl">
+<html lang="en">
 <head><title>{post.data.title}</title></head>
 <body>
-<a href="/">← Terug</a>
+<a href="/">← Back</a>
 <h1>{post.data.title}</h1>
 <p>{post.data.description}</p>
 <Content />

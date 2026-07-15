@@ -3,11 +3,11 @@ import { getCollection } from 'astro:content';
 const posts = await getCollection('blog');
 ---
 
-<html lang="nl">
+<html lang="en">
 <head><title>Test Portfolio</title></head>
 <body>
-<h1>Mijn Portfolio</h1>
-<h2>Laatste blogposts</h2>
+<h1>My Portfolio</h1>
+<h2>Latest blog posts</h2>
 <ul>
 	{posts.map(post => (
 		<li>
