@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+const posts = await getCollection('blog');
+---
+
+<html lang="nl">
+<head><title>Test Portfolio</title></head>
+<body>
+<h1>Mijn Portfolio</h1>
+<h2>Laatste blogposts</h2>
+<ul>
+	{posts.map(post => (
+		<li>
+			<a href={`/blog/${post.slug}`}>{post.data.title}</a>
+			<p>{post.data.description}</p>
+		</li>
+	))}
+</ul>
+<script>
+	if (window.netlifyIdentity) {
+		window.netlifyIdentity.on("init", user => {
+			if (!user) {
+				window.netlifyIdentity.on("login", () => {
+					document.location.href = "/admin/";
+				});
+			}
+		});
+	}
+</script>
+</body>
+</html>
