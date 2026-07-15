@@ -1,6 +1,9 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: jaidendor/test-portfolio
   branch: main
+  base_url: https://test-portfolio-8di.pages.dev/
+  auth_endpoint: api/auth
 
 media_folder: public/images
 public_folder: /images
